@@ -1,5 +1,5 @@
 # Author: Erfan Mola
-# I'm not a Python God, Don't expect a best proctice
+# I'm not a Python God, Don't expect the best practice
 # Thanks to StackOverflow (:
 
 import random, time, os
