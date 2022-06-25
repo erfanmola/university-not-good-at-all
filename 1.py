@@ -2,11 +2,7 @@
 # I'm not a Python God, Don't expect the best practice
 # Thanks to StackOverflow (:
 
-from audioop import bias
-from hashlib import new
 import os, time
-from shutil import move
-from traceback import print_last
 
 from more_itertools import last
 
