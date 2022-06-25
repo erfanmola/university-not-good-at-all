@@ -4,8 +4,6 @@
 
 import os, time
 
-from more_itertools import last
-
 positions = [];
 animation_interval = 0.25;
 
