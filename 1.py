@@ -4,8 +4,9 @@
 
 import os, time
 
+size = 12;
 positions = [];
-animation_interval = 0.25;
+animation_interval = 0.025;
 
 def RenderBoard(horse_position = [0,0]):
     
@@ -13,11 +14,11 @@ def RenderBoard(horse_position = [0,0]):
 
     print("╔═╦═╦═╦═╦═╦═╦═╦═╦═╦═╦═╦═╗");
 
-    for j in range(0,12):
+    for j in range(0,size):
 
         str = "║";
 
-        for i in range(0,12):
+        for i in range(0,size):
             
             if (horse_position[0] == i and j == horse_position[1]):
 
@@ -33,7 +34,7 @@ def RenderBoard(horse_position = [0,0]):
 
         print(str);
         
-        if (j == 11):
+        if (j == (size-1)):
 
             print("╚═╩═╩═╩═╩═╩═╩═╩═╩═╩═╩═╩═╝");
 
@@ -59,7 +60,7 @@ def ReverseChessBoard(board):
 
     for (key, item) in enumerate(board):
 
-        board[key] = [item[0], abs(item[1] - 11)];
+        board[key] = [item[0], abs(item[1] - (size-1))];
 
     return board;
 
@@ -81,7 +82,11 @@ def GetInput():
 
         if (len(string) == 2) :
 
-            return [int(string[0]), int(string[1])];
+            data = [int(string[0]), int(string[1])];
+
+            if (data[0] < size and data[1] < size):
+
+                return data;
 
     GetInput();
 
@@ -92,7 +97,7 @@ def SolveTheMysteriousPuzzleThatUniversityAskedUsToSolveAndItsCompletelyUselessS
     temp_data = data[:];
     last_pos  = data[-1];
     
-    if (len(temp_data) == 144):
+    if (len(temp_data) == (size*size)):
 
         return temp_data;
 
@@ -114,6 +119,8 @@ def SolveTheMysteriousPuzzleThatUniversityAskedUsToSolveAndItsCompletelyUselessS
 # -----------------------------------------
 
 def CalculateLMovement(x, y, type = 0):
+
+    global size;
 
     if (type == 0) :
 
@@ -159,7 +166,7 @@ def CalculateLMovement(x, y, type = 0):
 
         return None;
 
-    if ((x > 11 or x < 0) or (y > 11 or y < 0)):
+    if ((x > (size-1) or x < 0) or (y > (size-1) or y < 0)):
 
         return None;
 
