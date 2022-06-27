@@ -1,3 +1,7 @@
+# Author: Erfan Mola
+# I'm not a Python God, Don't expect the best practice
+# Thanks to StackOverflow (:
+
 import os, string, random
 
 words        = [ "PYTHON", "BORING", "LANGUAGE" ];
